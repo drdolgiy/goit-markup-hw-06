@@ -1,3 +1,14 @@
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
 :root {
   --accent-color: #2196f3;
   --primary-color: #212121;
@@ -906,13 +917,11 @@ body {
   border-color: var(--accent-color);
 }
 
-.form-input:focus,
-.form-input:hover + .form-icon-svg {
+.form-input:focus + .form-icon-svg {
   fill: var(--accent-color);
 }
 
-.form-icon-svg:focus,
-.form-icon-svg:hover {
+.form-input:hover + .form-icon-svg {
   fill: var(--accent-color);
 }
 
@@ -964,17 +973,6 @@ body {
   color: var(--secondary-color);
 }
 
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-}
-
 .modal-form-checkbox-label {
   display: flex;
   justify-content: center;
@@ -985,6 +983,7 @@ body {
   letter-spacing: 0.03em;
 
   color: var(--secondary-color);
+  cursor: pointer;
 }
 
 .modal-form-checkbox-label::before {
@@ -998,10 +997,15 @@ body {
 }
 
 .modal-form-checkbox:checked + .modal-form-checkbox-label::before {
-  background-image: url(../images/icon_check.svg);
+  background-image: url(../images/vector.svg);
   border-color: var(--accent-color);
   background-size: contain;
   background-origin: border-box;
+  background-color: var(--accent-color);
+}
+
+.modal-form-checkbox:focus + .modal-form-checkbox-label::before {
+  outline: 2px solid var(--accent-color);
 }
 
 .modal-form-checkbox-label a {

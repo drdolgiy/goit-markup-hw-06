@@ -965,12 +965,8 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-form-btn {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-
-  color: var(--secondary-color);
+.checkbox-wrapper {
+  margin-bottom: 30px;
 }
 
 .modal-form-checkbox-label {
@@ -1018,7 +1014,6 @@ body {
   align-items: center;
 
   margin: auto;
-  margin-top: 30px;
   width: 200px;
   height: 50px;
 
